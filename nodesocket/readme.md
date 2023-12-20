@@ -1,4 +1,3 @@
-```markdown
 # NodeSocket
 
 This is a simple Node.js project that uses WebSockets and an Express server.
@@ -38,4 +37,3 @@ This project uses the following dependencies:
 ## License
 
 This project is licensed under the ISC license.
-```
