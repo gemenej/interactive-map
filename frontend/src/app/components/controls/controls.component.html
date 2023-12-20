@@ -1,0 +1,41 @@
+<div class="flex-row d-flex justify-content-between">
+    <div class="slider-block">
+        <mat-card-content>
+            <ngx-slider
+                *ngIf="isLoaded"
+                [(value)]="value"
+                [options]="options || []"
+                (userChange)="onUserChange($event)"
+            ></ngx-slider>
+        </mat-card-content>
+    </div>
+    <div class="d-flex align-items-end btn-block">
+        <button
+            mat-raised-button
+            class="me-3"
+            color="primary"
+            (click)="toggleActiveStateAndEmit()"
+        >
+            {{ active ? 'Stop' : 'Start' }}
+        </button>
+        <button
+            *ngIf="isConnected"
+            mat-raised-button
+            class="me-3"
+            color="warn"
+            [disabled]="!active"
+            (click)="onWSDisconnect()"
+        >
+            Pause
+        </button>
+        <button
+            *ngIf="!isConnected"
+            mat-raised-button
+            color="warn"
+            [disabled]="!active"
+            (click)="onWSConnect()"
+        >
+            Live
+        </button>
+    </div>
+</div>

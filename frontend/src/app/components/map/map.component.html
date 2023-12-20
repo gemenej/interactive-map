@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-md-8">
+        <div class="map-container">
+            <div class="map-frame">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+    <div
+        *ngIf="active else noActiveData"
+        class="info-block col-md-4"
+    >
+        <div
+            *ngFor="let signal of signals"
+            class="signal-block"
+        >
+            {{ signal | json }}
+            <hr>
+        </div>
+    </div>
+    <ng-template #noActiveData>
+        <div class="no-active-data col-md-4">
+            <h3>No active data</h3>
+        </div>
+    </ng-template>
+</div>

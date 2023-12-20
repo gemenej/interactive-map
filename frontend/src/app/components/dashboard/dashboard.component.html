@@ -1,0 +1,24 @@
+<header class="px-3 py-2">
+    <h1>Dashboard</h1>
+</header>
+
+<section class="map-section container-fluid">
+    <app-map
+        [signals]="(signals$ | async) ?? []"
+        [active]="active"
+    ></app-map>
+</section>
+
+<section class="controls-section container-fluid mt-3">
+    <app-controls
+        [value]="value"
+        [active]="active"
+        [isConnected]="isConnected"
+        [timestamps]="(timestamps$ | async) ?? []"
+        [options]="(options$ | async) ?? {}"
+        (shown)="changeActivatedData($event)"
+        (timeChanged)="changeTime($event)"
+        (startWSConnection)="connectWS()"
+        (stopWSConnection)="disconnectWS()"
+    ></app-controls>
+</section>
