@@ -7,7 +7,7 @@ This is an Angular application that provides an interactive map dashboard. The d
 First, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/AngularMapDashboard.git
+git clone https://github.com/gemenej/interactive-map.git
 ```
 ## Backend 
 
