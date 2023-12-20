@@ -7,13 +7,12 @@ This is an Angular application that provides an interactive map dashboard. The d
 First, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/AngularMapDashboard.git
+git clone https://github.com/gemenej/interactive-map.git
 ```
 
-Then, navigate to the project directory and install the dependencies:
+Then install the dependencies:
 
 ```bash
-cd interactive-map
 npm install
 ```
 
@@ -29,9 +28,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 - WebSocket service for real-time data
 - Leaflet service for managing map data
 
-## Contributing
-
-Contributions are always welcome! Please read the [contribution guidelines](contributing.md) first.
 
 ## License
 

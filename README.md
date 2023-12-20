@@ -57,10 +57,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 - WebSocket service for real-time data
 - Leaflet service for managing map data
 
-## Contributing
-
-Contributions are always welcome! Please read the [contribution guidelines](contributing.md) first.
-
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
