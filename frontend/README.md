@@ -4,13 +4,7 @@ This is an Angular application that provides an interactive map dashboard. The d
 
 ## Installation 
 
-First, clone the repository to your local machine:
-
-```bash
-git clone https://github.com/gemenej/interactive-map.git
-```
-
-Then install the dependencies:
+Install the dependencies:
 
 ```bash
 npm install
