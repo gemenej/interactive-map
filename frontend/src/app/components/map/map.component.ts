@@ -10,6 +10,7 @@ import { LeafletService } from '../../services/leaflet.service';
 import * as L from 'leaflet';
 import { take } from 'rxjs';
 import { MapObj } from 'src/app/models/map.model';
+import {DataFetcherService} from "../../services/data-fetcher.service";
 
 const iconRetinaUrl = 'assets/marker-icon-2x.png';
 const iconUrl = 'assets/marker-icon.png';
@@ -38,7 +39,8 @@ export class MapComponent implements AfterViewInit, OnChanges {
 
   public map: L.Map = {} as L.Map;
 
-  constructor(private leafletService: LeafletService) {}
+  constructor(private leafletService: LeafletService,
+              private dataFetcher: DataFetcherService) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['active'] && this.active) {

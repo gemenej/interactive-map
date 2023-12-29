@@ -4,7 +4,7 @@
             <ngx-slider
                 *ngIf="isLoaded"
                 [(value)]="value"
-                [options]="options || []"
+                [options]="options || {}"
                 (userChange)="onUserChange($event)"
             ></ngx-slider>
         </mat-card-content>
