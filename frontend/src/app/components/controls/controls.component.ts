@@ -4,6 +4,7 @@ import {
   Component,
   EventEmitter,
   Input,
+  OnInit,
   Output,
 } from '@angular/core';
 import { ChangeContext, Options } from 'ngx-slider-v2';
@@ -14,13 +15,15 @@ import { ChangeContext, Options } from 'ngx-slider-v2';
   styleUrls: ['./controls.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ControlsComponent implements AfterViewInit {
+export class ControlsComponent implements AfterViewInit, OnInit {
   @Input() active: boolean = false;
   @Input() isConnected: boolean = false;
   @Input() timestamps: any[] = [];
   @Input() options: Options = {
     showTicks: false,
-    stepsArray: [],
+    floor: new Date().getTime(),
+    ceil: new Date().getTime() - 1000 * 60 * 60 * 12,
+    step: 1000,
     readOnly: true,
   };
   @Input() value: number = 0;
@@ -36,9 +39,11 @@ export class ControlsComponent implements AfterViewInit {
 
   constructor() {}
 
+  ngOnInit(): void {
+    this.isLoaded = true;
+  }
+
   ngAfterViewInit(): void {
-    this.value = 0;
-    this.options.stepsArray = this.timestamps.map((s) => s.timestamp);
     this.onChangeReadOnly(this.active);
     this.options = Object.assign({}, this.options, { readOnly: true });
     this.isLoaded = true;
