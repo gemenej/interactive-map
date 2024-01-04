@@ -1,3 +1,5 @@
 .idea
 .angular
 node_modules
+package-lock.json
+nodesocket/signals.json
