@@ -1,20 +1,19 @@
-import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { Injectable } from "@angular/core";
+import { environment } from "src/environments/environment";
 
 @Injectable({
-    providedIn: 'root',
+  providedIn: "root",
 })
 export class DataFetcherService {
+  private worker: Worker;
 
-    private worker: Worker;
+  constructor() {
+    this.worker = new Worker("/assets/workers/async-data-fetcher.js");
+    this.worker.onmessage = (event: MessageEvent) => this.onMessage(event);
+    this.worker?.postMessage(["INIT", environment.apiWSUrl]);
+  }
 
-    constructor() {
-        this.worker = new Worker("/assets/workers/async-data-fetcher.js");
-        this.worker.onmessage = (event: MessageEvent) => this.onMessage(event);
-        this.worker?.postMessage(["INIT", environment.apiWSUrl]);
-    }
-
-    onMessage(event: MessageEvent) {
-        console.log("got message from worker!");
-    }
+  onMessage(event: MessageEvent) {
+    console.log("got message from worker!");
+  }
 }

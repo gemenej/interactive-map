@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
-import * as L from 'leaflet';
-import { Observable, of } from 'rxjs';
-import { MapObj } from '../models/map.model';
+import { Injectable } from "@angular/core";
+import * as L from "leaflet";
+import { Observable, of } from "rxjs";
+import { MapObj } from "../models/map.model";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class LeafletService {
   constructor() {}
@@ -19,7 +19,7 @@ export class LeafletService {
 
   public getParamsOfTiles(): Observable<L.TileLayer> {
     const tiles = L.tileLayer(
-      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       {
         maxZoom: 18,
         minZoom: 1,

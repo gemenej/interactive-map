@@ -6,13 +6,13 @@ import {
   Input,
   OnInit,
   Output,
-} from '@angular/core';
-import { ChangeContext, Options } from 'ngx-slider-v2';
+} from "@angular/core";
+import { ChangeContext, Options } from "ngx-slider-v2";
 
 @Component({
-  selector: 'app-controls',
-  templateUrl: './controls.component.html',
-  styleUrls: ['./controls.component.scss'],
+  selector: "app-controls",
+  templateUrl: "./controls.component.html",
+  styleUrls: ["./controls.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ControlsComponent implements AfterViewInit, OnInit {

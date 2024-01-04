@@ -10,6 +10,9 @@
         *ngIf="active else noActiveData"
         class="info-block col-md-4"
     >
+        <div *ngIf="signals.length <= 0">
+            <h3>No data is currently available</h3>
+        </div>
         <div
             *ngFor="let signal of signals"
             class="signal-block"
@@ -20,7 +23,9 @@
     </div>
     <ng-template #noActiveData>
         <div class="no-active-data col-md-4">
-            <h3>No active data</h3>
+            <h3>
+                No active data. Press start button, please.
+            </h3>
         </div>
     </ng-template>
 </div>
