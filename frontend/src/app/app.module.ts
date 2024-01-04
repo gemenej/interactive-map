@@ -13,6 +13,7 @@ import { NgxSliderModule } from 'ngx-slider-v2';
 import { LeafletService } from './services/leaflet.service';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ControlsComponent } from './components/controls/controls.component';
+import {DataFetcherService} from "./services/data-fetcher.service";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,12 @@ import { ControlsComponent } from './components/controls/controls.component';
     MaterialModule,
     NgxSliderModule
   ],
-  providers: [SignalsService, WebSocketService, LeafletService],
+  providers: [
+    SignalsService,
+    WebSocketService,
+    LeafletService,
+    DataFetcherService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
